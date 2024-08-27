@@ -3,8 +3,8 @@ import { TodoContext } from "../ReactContext";
 
 function FormTodo(){
 
-    const {setOpenModal, addTodo} = React.useContext(TodoContext)
-    const [newTodoValue, setNewTodoValue] = React.useState('')
+    const {setOpenModal, addTodo, setNewTodoValue, newTodoValue} = React.useContext(TodoContext)
+    
 
     const onSubmit =(event)=>{
         event.preventDefault()
@@ -26,8 +26,11 @@ function FormTodo(){
           <label>ingresa la tarea que desea agregar</label>
           <textarea value={newTodoValue} onChange ={(e)=> setNewTodoValue(e.target.value)} name="textarea" id="textarea" rows="10" cols="50"  placeholder="Escriba su tarea"></textarea>
         </div>
-        <button className="form-submit-btn" onClick={()=>onCancel()}>regresar</button>
-        <button className="form-submit-btn"  >Agregar</button>
+        <div className="form-group-boton">
+          <button className="form-submit-btn" onClick={()=>onCancel()}>regresar</button>
+          <button className="form-submit-btn"  >Agregar</button>
+        </div>
+        
       </form>
     </div>
     )

@@ -23,6 +23,9 @@ function AppUI() {
     aumentarLikes,
     disminuirLikes,
     openModal,
+    todos, 
+    EditarTexto,
+    onOpenModal
   
   } = React.useContext(TodoContext)
 
@@ -35,7 +38,8 @@ function AppUI() {
           <TodoList>
             {loading && <TodosLoading />}
             {error && <TodosError />}
-            {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
+            {(!loading && searchedTodos.length === 0 && todos.length === 0) && <EmptyTodos />}
+            {(!loading && searchedTodos.length === 0 && todos.length > 0) && <h1>No se encontraron coincidencias</h1>}
 
             {searchedTodos.map((todo) =>
             (<TodoItem
@@ -47,6 +51,8 @@ function AppUI() {
               onAumentarLikes={() => aumentarLikes(todo.text, todo.id)}
               onDisminuirLikes={() => disminuirLikes(todo.text, todo.id)}
               likes={todo.likes}
+              onEditarTexto={()=> EditarTexto(todo.text, todo.id)}
+              onOpenModal={onOpenModal}
             />))}
           </TodoList>
 

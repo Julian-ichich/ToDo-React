@@ -9,7 +9,10 @@ function TodoProvider ({children}){
   const {item:contador, saveItem:savecontador}= useLocalStorage('CONTADOR_V1', 0)
   const  [searchValue, setSearchValue] = React.useState('')
   const  [openModal, setOpenModal] = React.useState(false)
-  const [idTodo, setIdTodo] = React.useState(0)
+  // const [idTodo, setIdTodo] = React.useState(0)
+  const [newTodoValue, setNewTodoValue] = React.useState('')
+  const [flagValue, setFlagValue] = React.useState(false)
+  const [guardarValor, setGuardarValor] = React.useState('')
 
 
   const completedTodo = todos.filter(todo => todo.completed)
@@ -52,15 +55,44 @@ function TodoProvider ({children}){
   }
 
   const addTodo=(text)=>{
-    if(text){
+
+    if(flagValue === false){
+      if(text){
         const newTodos = [...todos]
         newTodos.push({text, completed:false, likes:0, id:contador})
         saveTodos(newTodos)
-        setIdTodo(idTodo+1)
+        // setIdTodo(idTodo+1)
         savecontador(contador+1)
     }
+
+
+    }else if(flagValue === true){
+      if(text){
+        const newTodos = [...todos]
+        const todoIndex = newTodos.findIndex(todo => todo.text === guardarValor)
+        newTodos[todoIndex].text = text
+        saveTodos(newTodos)
+      }
+
+      setFlagValue(false)
+      setNewTodoValue('')
+    }
+    
    
   }
+
+  const EditarTexto=(texto, id)=>{
+      setFlagValue(true)
+      onOpenModal()
+      const newTodos = [...todos]
+      const todoIndex = newTodos.findIndex((todo) => todo.text === texto && todo.id === id)
+      setNewTodoValue(newTodos[todoIndex].text)
+      setGuardarValor(newTodos[todoIndex].text)
+      //addTodo(newTodos[todoIndex].text)
+    // newTodos[todoIndex].likes +=1
+    // saveTodos(newTodos)
+  }
+
 
 
   const onOpenModal =()=>{
@@ -68,6 +100,7 @@ function TodoProvider ({children}){
         setOpenModal(false)
     }else{
         setOpenModal(true)
+        setNewTodoValue('')
     }
   }
 
@@ -89,7 +122,10 @@ function TodoProvider ({children}){
             openModal, 
             setOpenModal,
             onOpenModal,
-            addTodo
+            addTodo,
+            EditarTexto,
+            setNewTodoValue,
+            newTodoValue
         }}
         >
             {children}
