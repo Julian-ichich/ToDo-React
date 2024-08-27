@@ -1,0 +1,30 @@
+.btn-like{
+   width: 30px;
+   height: 20px;
+   margin-left: 5px;
+}
+
+.btn-like:hover{
+    filter:invert();
+}
+
+.btn-dislike:hover{
+    filter:invert();
+}
+.btn-dislike{
+    width: 30px;
+    height: 20px;
+}
+
+
+.App{
+    font-size: 15px;
+    background-color: rgb(255, 227, 227);
+    text-align: center;
+    margin-right: 60px;
+    width: 110px;
+}
+
+.contador{
+   font-size: 25px;
+}

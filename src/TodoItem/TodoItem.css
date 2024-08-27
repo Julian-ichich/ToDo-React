@@ -1,0 +1,27 @@
+.TodoItem{
+    background-color: #FAFAFA;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 34px;
+    box-shadow: 0px 3px 50px rgb(255, 0, 0);
+    padding-left: 25px;
+}
+
+.TodoItem-active{
+    
+    box-shadow: 0px 3px 50px rgb(81, 255, 0);
+}
+
+.TodoItem-p{
+    margin: 24px 0px 24px 24px ;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.TodoItem-p--complete{
+    text-decoration: line-through;
+}
