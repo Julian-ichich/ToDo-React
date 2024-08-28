@@ -61,7 +61,6 @@ function TodoProvider ({children}){
         const newTodos = [...todos]
         newTodos.push({text, completed:false, likes:0, id:contador})
         saveTodos(newTodos)
-        // setIdTodo(idTodo+1)
         savecontador(contador+1)
     }
 
@@ -88,9 +87,6 @@ function TodoProvider ({children}){
       const todoIndex = newTodos.findIndex((todo) => todo.text === texto && todo.id === id)
       setNewTodoValue(newTodos[todoIndex].text)
       setGuardarValor(newTodos[todoIndex].text)
-      //addTodo(newTodos[todoIndex].text)
-    // newTodos[todoIndex].likes +=1
-    // saveTodos(newTodos)
   }
 
 
@@ -98,10 +94,13 @@ function TodoProvider ({children}){
   const onOpenModal =()=>{
     if(openModal === true){
         setOpenModal(false)
+
     }else{
         setOpenModal(true)
-        setNewTodoValue('')
+
     }
+    setNewTodoValue('')
+    flagValue === true ? setFlagValue(false) : setFlagValue(true)
   }
 
 

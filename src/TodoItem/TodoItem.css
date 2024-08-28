@@ -17,9 +17,13 @@
 .TodoItem-p{
     margin: 24px 0px 24px 24px ;
     width: calc(100% - 120px);
+    /* min-height: 50px;
+    max-height: 60px; */
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
+    /* overflow-x: hidden;
+    overflow-y: auto; */
 }
 
 .TodoItem-p--complete{
