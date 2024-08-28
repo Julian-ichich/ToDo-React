@@ -6,7 +6,8 @@
 }
 
 .containerbtn{
-    margin-right: 15px;
+    margin-right: 5px;
+    width: 20%;
 }
 
 .editarbtn:hover{

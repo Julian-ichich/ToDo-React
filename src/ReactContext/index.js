@@ -48,8 +48,6 @@ function TodoProvider ({children}){
     const todoIndex = newTodos.findIndex((todo) => todo.text === texto && todo.id === id)
     if(newTodos[todoIndex].likes > 0){
       newTodos[todoIndex].likes -=1
-    }else{
-      alert('no puedes disminuir likes')
     }
     saveTodos(newTodos)
   }
