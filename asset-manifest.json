@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ToDo-React/static/css/main.de8a91dd.css",
-    "main.js": "/ToDo-React/static/js/main.282ec636.js",
+    "main.js": "/ToDo-React/static/js/main.9849a7c8.js",
     "static/media/dislike-svgrepo-com.svg": "/ToDo-React/static/media/dislike-svgrepo-com.c48808997eac4d5b4f33073306ab5542.svg",
     "index.html": "/ToDo-React/index.html",
     "static/media/fileempty_120151.svg": "/ToDo-React/static/media/fileempty_120151.df50c7cef320a6ebe3bf5a8d2c8303c5.svg",
@@ -9,10 +9,10 @@
     "static/media/check.svg": "/ToDo-React/static/media/check.e9a948bba52a34123d2ed7aeda0ea495.svg",
     "static/media/like.svg": "/ToDo-React/static/media/like.953d5721176c89d0646da7ce001c70a6.svg",
     "main.de8a91dd.css.map": "/ToDo-React/static/css/main.de8a91dd.css.map",
-    "main.282ec636.js.map": "/ToDo-React/static/js/main.282ec636.js.map"
+    "main.9849a7c8.js.map": "/ToDo-React/static/js/main.9849a7c8.js.map"
   },
   "entrypoints": [
     "static/css/main.de8a91dd.css",
-    "static/js/main.282ec636.js"
+    "static/js/main.9849a7c8.js"
   ]
 }
