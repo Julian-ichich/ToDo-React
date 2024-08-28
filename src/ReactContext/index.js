@@ -100,7 +100,7 @@ function TodoProvider ({children}){
 
     }
     setNewTodoValue('')
-    flagValue === true ? setFlagValue(false) : setFlagValue(true)
+    setGuardarValor('')
   }
 
 
@@ -124,7 +124,9 @@ function TodoProvider ({children}){
             addTodo,
             EditarTexto,
             setNewTodoValue,
-            newTodoValue
+            newTodoValue,
+            flagValue,
+            setFlagValue
         }}
         >
             {children}
